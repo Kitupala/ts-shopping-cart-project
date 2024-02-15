@@ -1,4 +1,4 @@
-import { ReactElement, createContext, useEffect, useState } from "react";
+import { ReactElement, createContext, useState } from "react";
 
 export type ProductType = {
   sku: string;
@@ -34,7 +34,7 @@ const ProductsContext = createContext<UseProductsContextType>(initContextState);
 type ChildrenType = { children?: ReactElement | ReactElement[] };
 
 export const ProductsProvider = ({ children }: ChildrenType): ReactElement => {
-  const [products, setProducts] = useState<ProductType[]>(initState);
+  const [products] = useState<ProductType[]>(initState);
 
   // DATA QUERY
   // useEffect(() => {
